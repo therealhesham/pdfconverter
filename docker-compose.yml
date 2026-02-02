@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  pdfconverter:
+    build: .
+    container_name: pdfconverter
+    ports:
+      - "3015:3015"
+    volumes:
+      - .:/app
+    environment:
+      - FLASK_ENV=production
+    restart: unless-stopped
