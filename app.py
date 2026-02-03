@@ -1,8 +1,10 @@
 import io
 from flask import Flask, render_template, request, send_file
+from flask_cors import CORS
 import img2pdf
 
 app = Flask(__name__)
+CORS(app, resources={r"/*": {"origins": "*"}})
 
 @app.route('/')
 def index():
